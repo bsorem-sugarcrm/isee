@@ -26,12 +26,13 @@ router.get('/:country', function(req, res) {
     var code, country;
 
     if (req.param('country')){
-        country = req.param('country').toLowerCase().replace(/ /g, '');
+        country = req.param('country').toLowerCase();
 
         for (var i = 0; i < codes.length; i++){
-            var l = codes[i].name.toLowerCase().replace(/ /g, '');
-            if (codes[i].name.toLowerCase() === country)
-                code = codes[i].ISO;
+            var l = codes[i].name.toLowerCase();
+            if (codes[i].name.toLowerCase() === country){
+                code = codes[i].iso;
+            }
         }
     }
 
