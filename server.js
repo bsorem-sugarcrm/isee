@@ -26,9 +26,10 @@ router.get('/:country', function(req, res) {
     var code, country;
 
     if (req.param('country')){
-        country = req.param('country').toLowerCase();
+        country = req.param('country').toLowerCase().replace(/ /g, '');
 
         for (var i = 0; i < codes.length; i++){
+            var l = codes[i].name.toLowerCase().replace(/ /g, '');
             if (codes[i].name.toLowerCase() === country)
                 code = codes[i].ISO;
         }
@@ -46,4 +47,6 @@ app.use('/api', router);
 
 // START THE SERVER
 // =============================================================================
-app.listen(port);
+app.listen(port, function(){
+    console.log("Ready");
+});
