@@ -1,3 +1,4 @@
+module.exports = 
 [
 {
     "name": "United States",
@@ -867,4 +868,4 @@
     "name": "Korea, Republic of",
     "iso": "KR"
 }
-]
+];
